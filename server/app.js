@@ -28,7 +28,7 @@ app.use("/api", appRoutes);
 // If user hits the / route we will be
 // shown our react frontend app as we are
 // returning the content of build folder
-app.use("*", (_, res) => {
+app.use("/", (_, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

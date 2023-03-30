@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // to make build folder static
-app.use(express.static("../build"))
+app.use(express.static("build"));
 
 // appRoutes are the routes your backend will use
 // by convention we use /api before any backend routes
@@ -29,7 +29,7 @@ app.use("/api", appRoutes);
 // shown our react frontend app as we are
 // returning the content of build folder
 app.use("*", (_, res) => {
-  res.sendFile(path.join(__dirname, "../", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 // If user hits the route that donot exist

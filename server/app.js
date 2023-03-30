@@ -32,15 +32,6 @@ app.use("*", (_, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-// If user hits the route that donot exist
-// we will shoe not found message
-app.use((_, res) => {
-  res.status(404).json({
-    success: false,
-    message: "Not found!",
-  });
-});
-
 // Launch app to listen to specified port
 app.listen(port, () => {
   console.log(`Your server is running on Port: ${port}`);

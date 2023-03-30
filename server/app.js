@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // to make build folder static
-app.use(express.static("build"));
+app.use(express.static(path.join(__dirname, "build")));
 
 // appRoutes are the routes your backend will use
 // by convention we use /api before any backend routes
